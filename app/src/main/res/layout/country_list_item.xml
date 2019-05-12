@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="property"
+                type="com.example.android.countries.network.CountryProperty"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp">
+        <ImageView
+                android:id="@+id/country_image"
+                android:layout_width="100dp"
+                android:layout_height="56dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:imageUrl="@{property.flag}"
+                tools:src="@tools:sample/backgrounds/scenic" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp" android:layout_marginTop="8dp"/>
+
+        <TextView
+                android:id="@+id/txt_capital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1994"
+                android:text="@{property.capital}"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintStart_toEndOf="@+id/country_image" android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/country_image"
+                app:layout_constraintTop_toTopOf="@+id/country_image" app:layout_constraintVertical_bias="1.0"
+                android:layout_marginBottom="8dp"/>
+
+        <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{property.name}"
+                tools:text="Crime, Drama"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toEndOf="@+id/country_image" android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/country_image"
+                app:layout_constraintTop_toTopOf="@+id/country_image" app:layout_constraintVertical_bias="0.0"
+                android:layout_marginTop="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
